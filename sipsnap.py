@@ -243,7 +243,7 @@ def find_and_click_button(xpath):
     driver.execute_script("arguments[0].click();", page_button)
 
 #returns number of stars
-def how_much_stars(a, b, c):#a = weight of 1 star ... e = weight of five stars
+def how_much_stars(a, b, c):##a = weight of three stars, b = weight of four stars, c = weight of five stars
     range_of_choices = ["three_stars", "four_stars", "five_stars"]
     return(random.choices(range_of_choices, weights= [a, b, c], k = 1))
 
