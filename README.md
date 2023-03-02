@@ -1,5 +1,5 @@
 # sipsnap
-automation for mcdonald´s feedback system
+automation for users in mcdonald´s feedback system
 
 browser settings:
 maybe the browser setup settings have to be changed, depending on the browser which should be used for the processing the poll.
