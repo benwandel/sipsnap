@@ -15,7 +15,6 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium_recaptcha_solver import ReCaptchaSolver
 
 #setup the browser
 options = Options()
@@ -30,7 +29,7 @@ from flask import Flask, redirect, render_template, request, url_for
 
 """
 VARIABLES
-'$' as the seperator | website parts in German
+'$' as the seperator | website parts in german
 """
 
 #splashscreen
