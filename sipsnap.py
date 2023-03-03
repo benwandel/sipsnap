@@ -243,7 +243,7 @@ def find_and_click_button(xpath):
     driver.execute_script("arguments[0].click();", page_button)
 
 #returns number of stars
-def how_much_stars(a, b, c):##a = weight of three stars, b = weight of four stars, c = weight of five stars
+def how_much_stars(a, b, c):#a = weight of three stars, b = weight of four stars, c = weight of five stars
     range_of_choices = ["three_stars", "four_stars", "five_stars"]
     return(random.choices(range_of_choices, weights= [a, b, c], k = 1))
 
@@ -491,13 +491,14 @@ def run_page_16():
 def run_page_voucher():
 #voucher page
     time.sleep(10)
+    path_store_voucher = "path to store the qr code"
     reward_saved = False
     reward_counter = 0
     if driver.find_element('xpath', '//*[@id="imgQRCode"]').is_displayed() == True:
         while reward_saved == False:
             try:
-                complete_name_qr = os.path.join("path to store the qr code", f"qr{reward_counter}.png")
-                complete_name_code = os.path.join("path to store the voucher code", f"code{reward_counter}.txt")         
+                complete_name_qr = os.path.join(path_store_voucher, f"qr{reward_counter}.png")
+                complete_name_code = os.path.join(path_store_voucher, f"code{reward_counter}.txt")         
                 qr = open(complete_name_qr, "xb")
                 code = open(complete_name_code, "xt")
                 qr.write(driver.find_element('xpath', '//*[@id="imgQRCode"]').screenshot_as_png)
@@ -505,9 +506,10 @@ def run_page_voucher():
                 qr.close()
                 code.close()
                 reward_saved = True
+                input('QR Code and Voucher Code saved. Enter to close browser.')
             except:
-                os.remove(f"path to store the qr code/qr{reward_counter}.png")
-                os.remove(f"path to store the voucher code/code{reward_counter}.txt")
+                os.remove(f"{path_store_voucher}/qr{reward_counter}.png")
+                os.remove(f"{path_store_voucher}/code{reward_counter}.txt")
                 reward_counter = reward_counter + 1
     else:
         print('No voucher displayed')
@@ -558,10 +560,9 @@ check_and_run_question_page(run_page_15, headline15)
 
 check_and_run_question_page(run_page_16, headline16)
 
-input('Captcha solved?')
+input('Captcha solved? Enter to continue')
 
 run_page_voucher()
 
-input('quit?')
 driver.quit()
 driver.close()
