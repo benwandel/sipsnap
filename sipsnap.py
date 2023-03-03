@@ -506,7 +506,7 @@ def run_page_voucher():
                 qr.close()
                 code.close()
                 reward_saved = True
-                input('QR Code and Voucher Code saved. Enter to close browser.')
+                input(f'QR Code and Voucher Code saved in "{path_store_voucher}". Enter to close browser.')
             except:
                 os.remove(f"{path_store_voucher}/qr{reward_counter}.png")
                 os.remove(f"{path_store_voucher}/code{reward_counter}.txt")
