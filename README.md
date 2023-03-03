@@ -1,6 +1,9 @@
 # sipsnap
 automation for users in mcdonald´s feedback system
 
+description:
+this is a code for automatically processing the mcdonald´s feedback poll of germany. for trying out this code you need to do some changes of different variables. it is explained in detail in the next lines.
+
 browser settings:
 maybe the browser setup settings have to be changed, depending on the browser which should be used for the processing the poll.
 you can find these settings in line 20.
@@ -14,10 +17,7 @@ path to .exe of used browser
 path to receipt of mcdonald´s receipt (only german receipts will work)
 
 'openai.api_key' in line 406:
-OpenAI API Key for a automated answer from ChatGPT
+openai api key for a automated answer from chatgpt
 
-'complete_name_qr' in line 500 AND 'os.remove' in line 510:
-path to store the qr code -> where to store the .png of the qr code for free drink
-
-'complete_name_code' in line 501 AND 'os.remove' in line 511:
-path to store the voucher code -> where to store the .txt of the voucher code for free drink
+'path_store_voucher' in line 494:
+path to store the qr code and voucher code for the free drink
