@@ -249,7 +249,6 @@ def how_much_stars(a, b, c):#a = weight of three stars, b = weight of four stars
 
 def next_page():
     find_and_click_button(next_page_xpath)
-    print('next page')#debug
 
 def delay_poll():
     time.sleep(0.5)
@@ -285,10 +284,10 @@ def star_rating(list):
 def check_and_run_question_page(runpage, xpath_headline):
     try:
         driver.find_element("xpath", xpath_headline)
-        print(f"{runpage}: Running page")
+        print(f"{runpage}: Running page")#debug
         runpage()
     except:
-        print(f"{runpage}: Page not found")
+        print(f"{runpage}: Page not found")#debug
 
 """
 FUNCTIONS FOR PROCESSING POLL
